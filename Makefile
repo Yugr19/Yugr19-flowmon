@@ -10,7 +10,7 @@ define Package/flowmon
   SECTION:=utils
   CATEGORY:=Utilities
   TITLE:=FlowMon - Conntrack Flow Monitor
-  DEPENDS:=+libstdcpp
+  DEPENDS:=+libstdcpp6
 endef
 
 define Package/flowmon/description
