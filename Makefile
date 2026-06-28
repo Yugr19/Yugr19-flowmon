@@ -1,32 +1,32 @@
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=flowmon
-PKG_FORMAT:=ipk
-PKG_RELEASE:=1
+PKG_NAME:=Tfmon-Lite
+PKG_RELEASE:=2.0
 
 include $(INCLUDE_DIR)/package.mk
 
-define Package/flowmon
+define Package/Tfmon-Lite
   SECTION:=utils
   CATEGORY:=Utilities
-  TITLE:=FlowMon - Conntrack Flow Monitor
+  TITLE:=TfMon - Conntrack Flow Monitor
   DEPENDS:=+libstdcpp
 endef
 
-define Package/flowmon/description
-  Simple C++ conntrack flow monitor
+define Package/Tfmon-Lite/description
+  About
+Simple C++ network speed flow monitor
 endef
 
 define Build/Compile
 	$(TARGET_CXX) $(TARGET_CXXFLAGS) \
 		-std=c++17 \
-		-o $(PKG_BUILD_DIR)/flowmon \
+		-o $(PKG_BUILD_DIR)/Tfmon-Lite \
 		./src/main.cpp
 endef
 
-define Package/flowmon/install
+define Package/Tfmon-Lite/install
 	$(INSTALL_DIR) $(1)/usr/bin
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/flowmon $(1)/usr/bin/
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/Tfmon-Lite $(1)/usr/bin/
 endef
 
-$(eval $(call BuildPackage,flowmon))
+$(eval $(call BuildPackage,Tfmon-Lite))
